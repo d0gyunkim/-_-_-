@@ -14,3 +14,4 @@ body = {
 
 URL = os.getenv("WANTED_API_URL")
 response = requests.post(URL, headers=header, json=body)
+print(response.json()['choices'][0]['message']['content'])
