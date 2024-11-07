@@ -5,7 +5,7 @@ import json
 
 def handle_content(con):
     # 환경 변수 로드
-    load_dotovt
+    load_dotenv()
 
     # Header 설정
     header = {
@@ -15,8 +15,8 @@ def handle_content(con):
 
     body = {
       "hash": "28a2be4d1b3e5313220524dddd3a71ed6c1fdc71e98294e52201193906b639c7", 
-      "params": {"campus": con} 
-    }
+      "params": {"question":con} 
+}
 
     # API URL 가져오기
     URL = os.getenv("WANTED_API_URL")
@@ -31,3 +31,6 @@ def handle_content(con):
     else:
         print("Response status code:", response.status_code)
         print("Response content:", response.text)
+
+
+
