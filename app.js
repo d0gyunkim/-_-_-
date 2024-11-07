@@ -6,7 +6,7 @@ const app = express();
 const PORT = 3000;
 
 // 환경 변수에서 API 정보 로드
-const WANTED_API_URL = "https://api-laas.wanted.co.kr/api/preset/v2/chat/completions";
+const WANTED_API_URL = process.env.WANTED_API_URL;
 const WANTED_API_KEY = process.env.WANTED_API_KEY;
 const PROJECT_CODE = process.env.PROJECT_CODE;
 const PRESET_HASH = process.env.PRESET_HASH;
