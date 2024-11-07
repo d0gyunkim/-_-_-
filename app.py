@@ -6,7 +6,6 @@ import json
 # 환경 변수 로드
 load_dotenv()
 
-
 # Header와 Body 설정
 header = {
     "project": "KHU_PROMPTHON_018", 
