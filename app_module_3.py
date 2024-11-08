@@ -5,3 +5,4 @@ def handle_content(con):
     """ 특정 질문 유형에 대한 내용을 처리합니다. """
     content = send_api_request("c0d17e57929ea2d5d3c20361c8274a99ab2178d4907fe04542fc31c9f5987b1d", con)
     print("Handled Content in Module 3:", content)
+  
