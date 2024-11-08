@@ -5,7 +5,7 @@ from dotenv import load_dotenv
 
 load_dotenv()
 
-def send_api_request(hash_value, question):
+def send_api_request(hash_value, question,campus):
     """ API 요청을 전송하고 응답을 반환합니다. """
     header = {
         "project": "KHU_PROMPTHON_018",
