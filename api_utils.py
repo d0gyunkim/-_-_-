@@ -13,8 +13,8 @@ def send_api_request(hash_value, question):
     }
     body = {
         "hash": hash_value,
-        "params": {"question": question}
-    }
+         "params": {"question":"경희대 국캠 장학팀 번호","campus":""} 
+}
     url = os.getenv("WANTED_API_URL")
 
     response = requests.post(url, headers=header, json=body)
