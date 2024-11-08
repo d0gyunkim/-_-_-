@@ -25,7 +25,7 @@ body = {
 # API URL 가져오기
 URL = os.getenv("WANTED_API_URL")
 
-# POST 요청서ㅇ
+# POST 요청
 response = requests.post(URL, headers=header, json=body)
 
 # 응답 출력

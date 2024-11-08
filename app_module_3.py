@@ -16,7 +16,7 @@ def handle_content(con):
 
     body = {
       "hash": "c0d17e57929ea2d5d3c20361c8274a99ab2178d4907fe04542fc31c9f5987b1d", 
-       "params": {"question":"경희대 국캠 장학팀 번호","campus":""} 
+       "params": {"question":con,"campus":""} 
 }
 
     # API URL 가져오기
@@ -29,6 +29,7 @@ def handle_content(con):
     if response.ok:
         content = response.json()["choices"][0]["message"]["content"]
         print("Handled Content in Module 3:", content)
+        print("body: ",body)
     else:
         print("Response status code:", response.status_code)
         print("Response content:", response.text)
