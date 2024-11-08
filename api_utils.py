@@ -1,4 +1,4 @@
-# api_utils.py
+# api_utils.py: , API 요청과 응답 처리를 위한 공통 유틸리티 함수
 import os
 import requests
 from dotenv import load_dotenv

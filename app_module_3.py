@@ -1,4 +1,4 @@
-# app_module_3.py
+# app_module_3.py: 장학팀에 관한 정보(메일,전화번호,팩스번호)등을 처리하는 함수
 from api_utils import send_api_request
 
 def handle_content(con):
