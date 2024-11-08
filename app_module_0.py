@@ -33,7 +33,7 @@ if response.ok:
     content = response.json()["choices"][0]["message"]["content"]
     print("Content:", content)
     ques_code, con = content.split(",")
-    print("ques_code:", ques_code)
+    print('body: ', body)
     # 만약 ques_code == 3 일경우, app_module_3의 handle_content 함수를 호출
     if ques_code == '3':
        handle_content(con)
