@@ -1,6 +1,4 @@
 # 장학팀에 관한 정보를 내보내주는 모듈
-
-
 import os
 import requests
 from dotenv import load_dotenv
