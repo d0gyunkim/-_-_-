@@ -15,7 +15,7 @@ def create_body(module_hash, params=None, input=None):
     return body
 
 
-def call_module(URL, header, body):
+def call_module(URL, header, body, module_num):
     # POST 요청
     response = requests.post(URL, headers=header, json=body)
 
@@ -26,9 +26,12 @@ def call_module(URL, header, body):
     # 모듈에서 받은 응답 확인
     if response.ok:
         content = response.json()["choices"][0]["message"]["content"]
-        output, ques_code = content.split("---")
 
-        return output, ques_code
+        if module_num == "0":
+            output, ques_code = content.split("---")
+            return output, ques_code
+        else:
+            return content, None
         
     else:
         print("Error: Response status code:", response.status_code)
