@@ -20,17 +20,15 @@ header = {
 
 # 모듈 hash 딕셔너리 만들기
 module_hash = {
-    "0": "f8313ae5c1fe28fb0c8b404c4170ab87b09a4eeb55e0e2c8ce82a7ed96ab4fe9",
-    "2": "19712d5ea958dc9f971cb4641a269b833d41fc7eabd45be69827c2b80542378e",
+    "0": "4dff206d8e3c7246f39e86e13ac43debdff901f5d84f157e08c4dbba1d5948c6",
     "3": "c0d17e57929ea2d5d3c20361c8274a99ab2178d4907fe04542fc31c9f5987b1d",
-    "99": "f47196f6724e7022fd3b99472ecbbd7c0278a0b8103e3c98466d48c2c7571550"
+    "2": "19712d5ea958dc9f971cb4641a269b833d41fc7eabd45be69827c2b80542378e"
 }
 
 params_dict = {
     "0": None,
-    "2": None,
     "3": {"today_datetime": datetime.now().strftime("%A %Y-%m-%d %H:%M:%S")},
-    "99": None
+    "2": None
 }
 
 module_num = "0"
@@ -78,13 +76,26 @@ while True:
     
     print("api_input: ", api_input)
 
-    # 모듈 0 호출
-    print("모듈 0 호출")
-    
+    # 모듈 0 단계
+
     # body 생성
+    print("모듈 0 호출")
     module_0_body = create_body(module_hash["0"], params=None, input=api_input)
 
-    content, module_num = call_module(URL, header, module_0_body, module_num="0")
+    content, ques_num = call_module(URL, header, module_0_body, module_num="0")
+
+    if ques_num in ["98", "99"]:
+        module_num = "0"
+        
+        # log.txt 파일에 대화내용 기록
+        with open('log.txt', 'a', encoding='utf-8') as f:
+            f.write("AI: " + content + "\n")
+
+        # 답변을 출력하고 다시 질문을 받음
+        print("답변: " + content)    
+        continue
+    else:
+        module_num = ques_num
         
     # 다른 모듈 호출
     print("모듈 " + module_num + " 호출")
