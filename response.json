@@ -1,6 +1,21 @@
 {
-    "timestamp": "2024-11-11T05:07:46.072+00:00",
-    "status": 500,
-    "error": "Internal Server Error",
-    "path": "/api/preset/v2/chat/completions"
+    "id": "chatcmpl-ASH183szweEV2jDTDqPa7vjyW4zD6",
+    "object": "chat.completion",
+    "created": 1731301961962,
+    "model": "gpt-4-turbo-2024-04-09",
+    "choices": [
+        {
+            "finish_reason": "stop",
+            "index": 0,
+            "message": {
+                "role": "assistant",
+                "content": "제가 답할 수 없는 내용입니다."
+            }
+        }
+    ],
+    "usage": {
+        "prompt_tokens": 2669,
+        "completion_tokens": 12,
+        "total_tokens": 2681
+    }
 }
